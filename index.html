@@ -1,0 +1,908 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Versão de conferência: remover esta linha ao publicar a versão final -->
+<meta name="robots" content="noindex">
+<title>ALZR11 | Alianza Trust Renda Imobiliária FII</title>
+<meta name="description" content="O ALZR11 é um fundo com mais de R$ 1,7 bilhão em patrimônio, que investe em 26 imóveis alugados para 20 locatários de setores como logística, medicina diagnóstica, data centers e educação.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+  /* Identidade ALZR11: mesmas cores e mesma família da LP anterior.
+     Assinatura da página: a diagonal do logo (dx/dy = 1,34, cerca de 37 graus). */
+  :root{
+    --red:#b3141c; --red-700:#8e0f15; --red-800:#7d0d13; --red-50:#fdeceb; --coral:#ff8a80;
+    --ink:#1f2733; --ink-900:#1a2230; --slate:#475164; --steel:#6f8197; --steel-300:#9aa6b8; --steel-200:#cfd5de;
+    --fog:#f6f7f9; --line:#e8eaee; --body:#5b6676;
+    --font:"Archivo",system-ui,sans-serif;
+    --wrap:1180px; --gutter:24px; --bar:92px;
+    --ease:cubic-bezier(.2,.7,.2,1);
+    interpolate-size:allow-keywords;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-padding-top:calc(var(--bar) + 16px)}
+  html.lenis,html.lenis body{height:auto}
+  .lenis.lenis-smooth{scroll-behavior:auto !important}
+  .lenis.lenis-stopped{overflow:hidden}
+  body{font-family:var(--font);color:var(--ink);background:#fff;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;text-wrap:pretty;overflow-x:clip}
+  img,svg{display:block;max-width:100%}
+  img{height:auto}
+  a{color:inherit;text-decoration:none}
+  ul,ol{list-style:none}
+  :focus-visible{outline:2px solid var(--red);outline-offset:3px}
+  .on-dark :focus-visible{outline-color:#fff}
+  .skip{position:absolute;left:12px;top:-60px;z-index:60;background:#fff;color:var(--ink);padding:10px 16px;font-weight:600}
+  .skip:focus{top:8px}
+
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+  .sec{padding:clamp(72px,9vw,128px) 0}
+  .sec--fog{background:var(--fog)}
+  .on-dark{background:var(--ink);color:#fff}
+  [hidden]{display:none !important}
+
+  /* Regra de alinhamento: tudo centralizado em um eixo único. Ficam à esquerda só
+     o cabeçalho, o texto ao lado da foto no "Sobre" (desktop) e as perguntas do FAQ.
+     Linhas de comparação (barras) mantêm rótulo em uma ponta e valor na outra. */
+  main,.ft,.tick{text-align:center}
+
+  /* ---------- tipografia: uma família, duas larguras ---------- */
+  .d1,.d2,.d3{font-weight:800;text-transform:uppercase;font-stretch:112%}
+  .d2{font-size:clamp(30px,4.5vw,60px);line-height:1.02;letter-spacing:-.022em;text-wrap:balance}
+  .d2--sm{font-size:clamp(26px,3.1vw,42px);line-height:1.06}
+  .d3{font-size:clamp(18px,1.7vw,22px);line-height:1.2;letter-spacing:-.008em;font-stretch:106%}
+  .n{font-stretch:72%;font-weight:700;line-height:.92;letter-spacing:-.012em;font-variant-numeric:lining-nums}
+  .lead{color:var(--body);max-width:60ch;margin-left:auto;margin-right:auto}
+  .on-dark .lead{color:rgba(255,255,255,.78)}
+  .src{display:block;font-size:13px;line-height:1.5;color:var(--body);margin:16px auto 0;max-width:70ch}
+  .note{display:flex;gap:10px;align-items:baseline;width:fit-content;margin:14px auto 0;padding:8px 12px;border:1px dashed var(--steel-300);font-size:13px;line-height:1.45;color:var(--slate);background:#fff;max-width:min(70ch,100%);text-align:left}
+  .note b{flex:none;color:var(--red);font-weight:700}
+
+  /* ---------- botão de seta (mesmo princípio da referência, nas cores ALZR11) ---------- */
+  .afb{--bg:var(--red);--text:#fff;--fill:#fff;--fill-text:var(--red);--arrow:var(--red);
+       --ic:38px;--ir:7px;--iy:calc((100% - var(--ic)) / 2);--e:cubic-bezier(.785,.135,.15,.86);--dur:.45s;
+       position:relative;display:inline-flex;align-items:center;height:52px;max-width:100%;
+       padding:0 calc(var(--ic) + var(--ir) + 18px) 0 26px;border-radius:999px;border:1px solid var(--bg);
+       background:var(--bg);color:var(--text);font-size:15px;font-weight:600;line-height:1.15;overflow:hidden;white-space:nowrap;cursor:pointer;text-align:left}
+  .afb__t{position:relative;z-index:1}
+  .afb__fill{position:absolute;z-index:2;border-radius:999px;background:var(--fill);pointer-events:none;
+       inset:var(--iy) var(--ir) var(--iy) calc(100% - var(--ir) - var(--ic));transition:inset var(--dur) var(--e)}
+  .afb__alt{position:absolute;inset:0;z-index:2;display:flex;align-items:center;padding:inherit;color:var(--fill-text);pointer-events:none;
+       clip-path:inset(var(--iy) var(--ir) var(--iy) calc(100% - var(--ir) - var(--ic)) round 999px);transition:clip-path var(--dur) var(--e)}
+  .afb__ic{position:absolute;right:var(--ir);top:50%;z-index:3;width:var(--ic);height:var(--ic);transform:translateY(-50%);border-radius:50%;overflow:hidden;color:var(--arrow);pointer-events:none}
+  .afb__ic svg{position:absolute;left:50%;top:50%;width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform var(--dur) var(--e)}
+  .afb__ic svg:first-child{transform:translate(-170%,-50%) scale(0)}
+  .afb__ic svg:last-child{transform:translate(-50%,-50%) scale(1)}
+  .afb:hover .afb__fill{inset:0}
+  .afb:hover .afb__alt{clip-path:inset(0 0 0 0 round 999px)}
+  .afb:hover .afb__ic svg:first-child{transform:translate(-50%,-50%) scale(1)}
+  .afb:hover .afb__ic svg:last-child{transform:translate(70%,-50%) scale(0)}
+  .afb--light{--bg:#fff;--text:var(--red);--fill:var(--ink);--fill-text:#fff;--arrow:#fff}
+  .afb--ink{--bg:var(--ink);--text:#fff;--fill:var(--red);--fill-text:#fff;--arrow:#fff}
+  .cta{display:flex;justify-content:center;margin-top:clamp(36px,4vw,56px)}
+  @media (max-width:440px){ .afb{white-space:normal;height:58px;font-size:14px;padding-left:20px} }
+  @media (prefers-reduced-motion:reduce){ .afb__fill,.afb__alt,.afb__ic svg{transition:none} }
+
+  /* ---------- topo ---------- */
+  .topbar{position:sticky;top:0;z-index:51;height:28px;display:flex;align-items:center;justify-content:center;background:var(--ink);color:#fff;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+  .hd{position:sticky;top:28px;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+  .hd__in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:64px;max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+  .hd__logo img{height:30px;width:auto}
+  .hd__nav{display:flex;gap:28px;font-size:14px;font-weight:500;color:var(--slate)}
+  .hd__nav a{padding:6px 0;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+  .hd__nav a:hover{color:var(--red);border-color:var(--red)}
+  .hd__r{display:flex;align-items:center;gap:8px}
+  .hd__btn{display:inline-flex;align-items:center;height:38px;padding:0 18px;border-radius:999px;background:var(--red);color:#fff;font-size:14px;font-weight:600;white-space:nowrap;transition:background .15s}
+  .hd__btn:hover{background:var(--red-700)}
+  .burger{display:none;place-items:center;width:40px;height:40px;background:none;border:0;color:var(--ink);cursor:pointer}
+  .burger svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+  .menu{display:none;background:#fff;border-bottom:1px solid var(--line);padding:6px var(--gutter) 14px}
+  .menu[data-open="true"]{display:block}
+  .menu a{display:block;padding:12px 0;font-weight:500;border-bottom:1px solid var(--line)}
+  .menu a:last-child{border-bottom:0}
+  @media (max-width:1023px){ .hd__nav{display:none} .burger{display:grid} }
+  @media (max-width:520px){ .hd__btn{display:none} .hd__logo img{height:26px} }
+
+  /* ---------- dobra 1: a foto abre pela diagonal do logo conforme o scroll ---------- */
+  .hero{background:var(--ink-900);color:#fff}
+  .hero__pin{display:flex;flex-direction:column}
+  .hero__stage{position:relative;flex:1;display:flex;flex-direction:column;overflow:hidden;--x:130vw;--dx:1000px;--p:0}
+  .hero__photo{position:relative;overflow:hidden}
+  .hero__photo img{width:100%;height:100%;object-fit:cover;object-position:60% 100%}
+  .hero__stripe{position:absolute;inset:0;background:var(--red);pointer-events:none}
+  .hero__scrim{position:absolute;inset:0;pointer-events:none;opacity:0;background:radial-gradient(ellipse 72% 90% at 50% 50%,rgba(26,34,48,.93) 0%,rgba(26,34,48,.86) 58%,rgba(26,34,48,.42) 100%)}
+  .hero__copy{position:relative;z-index:2;width:100%;text-align:center}
+  .hero__logo{width:min(340px,78vw);height:auto;margin:0 auto clamp(20px,3.4vh,34px)}
+  .hero__t{font-size:clamp(32px,min(4.5vw,7.2vh),64px);line-height:1.02;letter-spacing:-.024em;max-width:14.6em;margin:0 auto;text-wrap:balance}
+  .hero__p{margin:clamp(14px,2.4vh,24px) auto 0;max-width:37em;color:rgba(255,255,255,.86)}
+  .hero .afb{margin-top:clamp(18px,3vh,30px)}
+  .hero__legal{margin:14px auto 0;font-size:13px;color:rgba(255,255,255,.74);max-width:44em}
+  .hero__stats{position:relative;z-index:3;background:var(--ink-900);border-top:1px solid rgba(255,255,255,.14)}
+  .hero__stats ul{display:grid;grid-template-columns:repeat(3,1fr);max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+  .hero__stats li{display:flex;align-items:center;justify-content:center;gap:16px;padding:20px 24px;text-align:left}
+  .hero__stats li+li{border-left:1px solid rgba(255,255,255,.14)}
+  .hero__stats .n{font-size:clamp(38px,4vw,54px);white-space:nowrap}
+  .hero__stats p{font-size:14px;line-height:1.3;color:rgba(255,255,255,.8);max-width:20ch}
+
+  @media (min-width:1024px){
+    .hero__stage{justify-content:center;padding:clamp(32px,5vh,56px) 0}
+    .hero__photo{position:absolute;inset:0;clip-path:polygon(var(--x) 0,100% 0,100% 100%,calc(var(--x) - var(--dx)) 100%)}
+    .hero__photo img{transform:scale(calc(1.08 - .08 * var(--p)))}
+    .hero__stripe{clip-path:polygon(calc(var(--x) - 112px) 0,calc(var(--x) - 56px) 0,calc(var(--x) - 56px - var(--dx)) 100%,calc(var(--x) - 112px - var(--dx)) 100%)}
+  }
+  /* o pin só existe quando tudo cabe na tela e o movimento é bem-vindo */
+  @media (min-width:1024px) and (min-height:760px) and (prefers-reduced-motion:no-preference){
+    .hero{height:calc(100vh - var(--bar) + 70vh)}
+    .hero__pin{position:sticky;top:var(--bar);height:calc(100vh - var(--bar))}
+  }
+  @media (max-width:1023px){
+    .hero__stage{padding-top:44px}
+    .hero__copy{order:1}
+    .hero__media{order:2;position:relative;aspect-ratio:4/3;margin-top:36px}
+    .hero__photo{position:absolute;inset:0;clip-path:polygon(0 44.8%,45% 0,100% 0,100% 100%,0 100%)}
+    .hero__photo img{object-position:70% 100%}
+    .hero__stripe{clip-path:polygon(25% 0,37% 0,0 36.8%,0 24.9%)}
+    .hero__scrim{display:none}
+  }
+  @media (max-width:767px){
+    .hero__stats ul{grid-template-columns:1fr;padding:6px var(--gutter)}
+    .hero__stats li,.hero__stats li+li{flex-direction:column;gap:6px;padding:16px 0;border-left:0;text-align:center}
+    .hero__stats li+li{border-top:1px solid rgba(255,255,255,.14)}
+    .hero__stats p{max-width:none}
+  }
+
+  /* ---------- faixa de cotação ---------- */
+  .tick{background:var(--steel);color:#fff}
+  .tick__in{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px 48px;max-width:var(--wrap);margin:0 auto;padding:16px var(--gutter)}
+  .tick__sym{font-size:22px;font-weight:800;font-stretch:112%}
+  .tick dl{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 40px}
+  .tick dt{font-size:13px;font-weight:600;line-height:1.3}
+  .tick dd{font-size:20px;font-weight:700;line-height:1.2}
+
+  /* ---------- dobra 2 ---------- */
+  .tese__top .lead,.perf__top .lead{margin-top:20px}
+  @media (min-width:1024px){ .sobre__txt{text-align:left} .sobre__txt .lead{margin-left:0;margin-right:0} }
+  .sobre{display:grid;grid-template-columns:7fr 5fr;gap:32px 56px;align-items:center;margin-top:clamp(48px,6vw,88px)}
+  /* slide do portfólio: rola com o dedo sem JS; o script só adiciona setas, progresso e avanço automático */
+  .port{position:relative;min-width:0}
+  .port__track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+  .port__track::-webkit-scrollbar{display:none}
+  .port__s{flex:0 0 100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always}
+  .port__s img{aspect-ratio:16/10;width:100%;object-fit:cover;background:var(--fog);clip-path:polygon(0 0,100% 0,100% 100%,22% 100%,0 71%)}
+  .port__s figcaption{padding-top:14px;font-size:15px;line-height:1.35;color:var(--body);text-align:center}
+  .port__s b{display:block;font-size:18px;font-weight:700;color:var(--ink)}
+  .port__nav{position:absolute;top:0;right:0;display:none;gap:2px}
+  .js .port__nav{display:flex}
+  .port__nav button{display:grid;place-items:center;width:44px;height:44px;background:var(--ink);border:0;color:#fff;cursor:pointer;transition:background .15s}
+  .port__nav button:hover{background:var(--red)}
+  .port__nav svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .port__nav button:first-child svg{transform:scaleX(-1)}
+  .port__bar{height:3px;margin-top:14px;background:var(--line)}
+  .port__bar i{display:block;height:100%;width:var(--p,4.35%);background:var(--red);transition:width .3s var(--ease)}
+  .sobre p{margin-top:14px}
+  .grow{margin-top:clamp(64px,8vw,112px);padding-top:32px;border-top:2px solid var(--ink)}
+  .grow__g{display:grid;grid-template-columns:1fr 1fr;gap:48px 56px;margin-top:28px}
+  .grow__v{font-size:clamp(64px,8vw,112px);color:var(--ink)}
+  .grow__l{font-size:15px;color:var(--body);margin-top:8px}
+  .grow__foot{margin-top:40px}
+
+  /* gráfico de barras alimentado por HIST no script */
+  .vbars{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:8px;align-items:end;height:170px;margin-top:20px}
+  .vbars>div{display:flex;flex-direction:column;justify-content:flex-end;height:100%;min-width:0;text-align:center}
+  .vbars i{display:block;flex:none;height:calc((100% - 46px) * var(--h));background:var(--steel-200);transform-origin:bottom;transition:transform .9s var(--ease)}
+  .vbars>div:last-child i{background:var(--red)}
+  .vbars em{font-style:normal;font-size:13px;line-height:1.2;font-stretch:75%;font-weight:600;color:var(--body);margin-bottom:6px;white-space:nowrap}
+  .vbars>div:last-child em{color:var(--red);font-weight:700}
+  .vbars span{font-size:13px;line-height:1.2;color:var(--body);margin-top:6px}
+  .js [data-reveal]:not(.is-in) .vbars i{transform:scaleY(0)}
+
+  /* ---------- dobra 3 ---------- */
+  .race{margin-top:clamp(36px,5vw,64px);display:grid;gap:10px}
+  .race__row{height:clamp(84px,10vw,128px);background:#e9ecf0}
+  .race__bar{display:flex;align-items:center;justify-content:space-between;gap:16px;height:100%;width:var(--w);padding:0 clamp(16px,2.4vw,32px);color:#fff;text-align:left;transition:width 1.2s var(--ease)}
+  .js [data-reveal]:not(.is-in) .race__bar{width:0;overflow:hidden}
+  .race__bar--a{background:var(--red)} .race__bar--b{background:var(--slate)}
+  .race__name{font-size:clamp(15px,1.5vw,19px);font-weight:700}
+  .race__name small{display:block;font-size:13px;font-weight:500;opacity:.86}
+  .race__bar .n{font-size:clamp(52px,7vw,96px)}
+  .dist{display:grid;grid-template-columns:7fr 5fr;gap:40px 56px;margin-top:clamp(64px,8vw,112px);padding-top:32px;border-top:2px solid var(--ink)}
+  .dist .vbars{height:210px;margin-top:28px}
+  .dist__sub{font-size:15px;color:var(--body);margin-top:4px}
+  .dist__txt{margin:24px auto 0;font-size:15px;color:var(--body);max-width:62ch}
+  .dist__big{font-size:clamp(64px,8vw,104px);color:var(--red)}
+  .dist__l{color:var(--body);font-size:15px;margin-top:8px}
+  .dates{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;margin-top:30px}
+  .dates span{display:block;font-size:13px;color:var(--body)}
+  .dates b{display:block;font-size:18px;font-weight:700}
+  .dates i{display:block;height:2px;background:var(--steel-200);position:relative}
+  .dates i::after{content:"";position:absolute;right:-1px;top:-4px;width:10px;height:10px;border-top:2px solid var(--steel-300);border-right:2px solid var(--steel-300);transform:rotate(45deg)}
+  .proj{margin-top:26px;padding-top:18px;border-top:1px solid #dcdfe5;font-size:15px;color:var(--body)}
+  .proj b{display:block;margin-top:2px;font-size:20px;line-height:1.25;color:var(--ink)}
+
+  .sim{margin-top:clamp(56px,7vw,96px);display:grid;grid-template-columns:7fr 5fr;gap:32px 56px;padding:clamp(28px,4.4vw,56px);background:var(--ink);color:#fff}
+  .sim__base{margin-top:6px;font-size:15px;color:rgba(255,255,255,.78)}
+  .sim__lbl{display:block;margin-top:28px;font-size:15px;font-weight:600}
+  .sim__row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;align-items:center;margin-top:10px}
+  .sim__field{width:150px;height:48px;padding:0 14px;border:1px solid rgba(255,255,255,.34);background:transparent;color:#fff;font:inherit;font-size:20px;font-weight:700}
+  .sim__field:focus{outline:2px solid #fff;outline-offset:1px}
+  .sim__p{height:48px;padding:0 16px;background:transparent;border:1px solid rgba(255,255,255,.34);color:#fff;font:inherit;font-size:15px;font-weight:600;cursor:pointer;transition:background .15s,border-color .15s}
+  .sim__p:hover{border-color:#fff}
+  .sim__p[aria-pressed="true"]{background:var(--red);border-color:var(--red)}
+  .sim__range{-webkit-appearance:none;appearance:none;display:block;width:100%;height:6px;margin-top:24px;background:linear-gradient(90deg,var(--coral) var(--f,10%),rgba(255,255,255,.22) var(--f,10%));outline-offset:8px;cursor:pointer}
+  .sim__range::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:#fff;border:0}
+  .sim__range::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:#fff;border:0}
+  .sim__out{align-self:center}
+  .sim__v{font-size:clamp(64px,8.4vw,112px);white-space:nowrap;color:#fff}
+  .sim__c{margin-top:10px;font-size:15px;color:rgba(255,255,255,.78)}
+  .sim__legal{grid-column:1/-1;padding-top:16px;border-top:1px solid rgba(255,255,255,.16);font-size:13px;color:rgba(255,255,255,.74)}
+
+  /* ---------- dobra 4 ---------- */
+  .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:clamp(32px,4vw,56px)}
+  .tile{position:relative;aspect-ratio:4/5;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:22px;color:#fff;overflow:hidden;clip-path:polygon(0 0,62% 0,100% 23%,100% 100%,0 100%)}
+  .tile--a{background:var(--ink)} .tile--b{background:var(--slate)} .tile--c{background:var(--steel)} .tile--d{background:var(--red)}
+  .tile svg{width:clamp(44px,5vw,64px);height:clamp(44px,5vw,64px);fill:none;stroke:currentColor;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round}
+  .tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .tile h3{position:relative;font-size:clamp(19px,2vw,26px);line-height:1.08;font-weight:800;font-stretch:106%;text-transform:uppercase;letter-spacing:-.01em}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:clamp(40px,5vw,64px)}
+  .kpis li{padding-top:16px;border-top:2px solid var(--ink)}
+  .kpis .n{font-size:clamp(46px,5vw,68px);color:var(--red)}
+  .kpis p{margin-top:8px;font-size:15px;line-height:1.4;color:var(--body)}
+  .kpis .d3{color:var(--red);line-height:1;padding-top:12px}
+  .kpis .d3+p{margin-top:12px}
+
+  .disc{color:#fff;background:linear-gradient(127deg,var(--red) 0 58%,var(--red-700) 58% 100%)}
+  .disc__in{padding-top:clamp(56px,7vw,96px);padding-bottom:clamp(56px,7vw,96px)}
+  .disc .d2{font-size:clamp(28px,3.6vw,48px)}
+  .disc__txt p{margin:16px auto 0;max-width:60ch}
+  .disc .src{color:rgba(255,255,255,.88)}
+  .disc__cmp{max-width:760px;margin:clamp(32px,4vw,48px) auto 0}
+  .cmp__row+.cmp__row{margin-top:22px}
+  .cmp__h{display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-size:15px;font-weight:600;text-align:left}
+  .cmp__h .n{font-size:clamp(40px,4.6vw,60px)}
+  .cmp__t{position:relative;height:22px;margin-top:8px;background:rgba(255,255,255,.2)}
+  .cmp__t i{display:block;height:100%;width:var(--w);background:#fff;transition:width 1.1s var(--ease)}
+  .js [data-reveal]:not(.is-in) .cmp__t i{width:0}
+  .cmp__gap{margin-top:8px;text-align:right;font-size:15px;font-weight:600}
+  .disc__dy{display:flex;align-items:center;justify-content:center;gap:16px;text-align:left;margin-top:26px;padding-top:20px;border-top:1px solid rgba(255,255,255,.3)}
+  .disc__dy .n{font-size:clamp(48px,5.4vw,72px)}
+  .disc__dy span{font-size:15px;line-height:1.3;font-weight:500}
+
+  /* ---------- dobra 5: lista tipográfica ---------- */
+  .set{margin-top:clamp(32px,4vw,56px);border-top:2px solid var(--ink)}
+  .set li{display:grid;grid-template-columns:auto auto;justify-content:center;gap:6px 18px;align-items:center;padding:clamp(18px,2vw,26px) 0;border-bottom:1px solid #dcdfe5;transition:color .2s}
+  .set svg{width:32px;height:32px;fill:none;stroke:var(--red);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+  .set h3{font-size:clamp(24px,3.5vw,48px);line-height:1;font-weight:800;font-stretch:112%;text-transform:uppercase;letter-spacing:-.022em;transition:color .2s}
+  .set p{grid-column:1/-1;font-size:16px;line-height:1.45;color:var(--body)}
+  .set li:hover h3{color:var(--red)}
+
+  /* ---------- dobra 6 ---------- */
+  .loc__n{font-size:clamp(120px,15vw,208px);color:var(--red);line-height:.8}
+  .loc .d2{margin-top:22px}
+  .loc .lead{margin-top:16px}
+  /* carrossel de locatários: só os logos, um passo por segundo, em loop (o script duplica a lista) */
+  .logos{--n:6;--gap:16px;display:flex;gap:var(--gap);margin-top:clamp(32px,4vw,56px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+  .logos::-webkit-scrollbar{display:none}
+  .logos li{flex:0 0 calc((100% - (var(--n) - 1) * var(--gap)) / var(--n));aspect-ratio:5/3;position:relative;scroll-snap-align:start}
+  .logos img{position:absolute;inset:9%;width:82%;height:82%;object-fit:contain}
+  @media (max-width:1023px){ .logos{--n:4;--gap:12px} }
+  @media (max-width:520px){ .logos{--n:3;--gap:8px} }
+
+  /* ---------- dobra 7: quatro etapas em seta ---------- */
+  .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0 6px;margin-top:clamp(36px,5vw,64px)}
+  .flow__h{display:flex;align-items:center;justify-content:center;height:76px;margin-right:-20px;font-size:40px;clip-path:polygon(0 0,calc(100% - 28px) 0,100% 50%,calc(100% - 28px) 100%,0 100%,28px 50%);color:#fff}
+  .flow li:first-child .flow__h{clip-path:polygon(0 0,calc(100% - 28px) 0,100% 50%,calc(100% - 28px) 100%,0 100%)}
+  .flow li:nth-child(1) .flow__h{background:var(--slate)}
+  .flow li:nth-child(2) .flow__h{background:var(--steel)}
+  .flow li:nth-child(3) .flow__h{background:var(--red-700)}
+  .flow li:nth-child(4) .flow__h{background:var(--red);margin-right:0}
+  .flow h3{margin-top:22px;font-size:20px;line-height:1.2;font-weight:700}
+  .flow p{margin-top:8px;font-size:15px;line-height:1.5;color:rgba(255,255,255,.78)}
+  /* a seta avança 20px sobre a coluna seguinte: o texto acompanha o centro dela */
+  @media (min-width:1024px){ .flow h3,.flow p{padding:0 10px 0 30px} .flow li:last-child h3,.flow li:last-child p{padding:0 10px} }
+
+  /* ---------- dobra 8 ---------- */
+  .why{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:clamp(32px,4vw,56px)}
+  .why li{background:#fff;padding:clamp(24px,3vw,40px)}
+  .why .n{font-size:clamp(50px,5.6vw,76px);color:var(--red);white-space:nowrap}
+  .why h3{margin-top:20px;font-size:19px;line-height:1.25;font-weight:700}
+  .why p{margin-top:6px;font-size:15px;line-height:1.5;color:var(--body)}
+
+  /* ---------- dobra 9 ---------- */
+  .faq__list{max-width:860px;margin:clamp(32px,4vw,56px) auto 0;border-top:2px solid var(--ink);text-align:left}
+  .faq details{border-bottom:1px solid #dcdfe5}
+  .faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 0;font-size:19px;font-weight:700;line-height:1.3;cursor:pointer}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary:hover{color:var(--red)}
+  .faq summary svg{flex:none;width:20px;height:20px;fill:none;stroke:var(--red);stroke-width:2;stroke-linecap:round;transition:transform .3s var(--ease)}
+  .faq details[open] summary svg{transform:rotate(45deg)}
+  .faq details::details-content{block-size:0;overflow:clip;transition:block-size .3s var(--ease),content-visibility .3s allow-discrete}
+  .faq details[open]::details-content{block-size:auto}
+  .faq details p{padding-bottom:22px;font-size:16px;color:var(--body);max-width:62ch}
+  @media (prefers-reduced-motion:reduce){ .faq details::details-content,.race__bar,.vbars i,.cmp__t i{transition:none} }
+
+  /* ---------- rodapé ---------- */
+  .ft{background:var(--ink-900);color:#fff;padding:clamp(48px,6vw,72px) 0 32px}
+  .ft__logo{width:min(300px,78vw);height:auto;margin:0 auto}
+  .ft__legal{margin:24px auto 0;font-size:14px;line-height:1.65;color:rgba(255,255,255,.76);max-width:90ch}
+  .ft__bar{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 24px;margin-top:32px;padding-top:18px;border-top:1px solid rgba(255,255,255,.16);font-size:13px;color:rgba(255,255,255,.72)}
+
+  /* ---------- responsivo geral ---------- */
+  @media (max-width:1023px){
+    .sobre,.dist,.sim{grid-template-columns:1fr}
+    .disc{background:linear-gradient(160deg,var(--red) 0 62%,var(--red-700) 62% 100%)}
+    .kpis{grid-template-columns:repeat(2,1fr)}
+    .why{grid-template-columns:repeat(2,1fr)}
+    .flow{grid-template-columns:1fr;gap:28px}
+    .flow__h,.flow li:first-child .flow__h,.flow li:nth-child(4) .flow__h{width:112px;height:64px;margin:0 auto;padding-right:10px;font-size:34px;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 50%,calc(100% - 18px) 100%,0 100%)}
+    .flow h3{margin-top:14px}
+    .flow p{max-width:52ch;margin-left:auto;margin-right:auto}
+    .set li{grid-template-columns:minmax(0,1fr);justify-items:center;gap:8px}
+    .set p{grid-column:auto}
+  }
+  @media (max-width:767px){
+    :root{--gutter:16px}
+    body{font-size:16px}
+    .grow__g{grid-template-columns:1fr}
+    .why{grid-template-columns:1fr}
+    .kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}
+    .kpis .d3{font-size:clamp(14px,4.4vw,18px)}
+    .tiles{grid-template-columns:repeat(2,1fr);gap:8px}
+    .tile{padding:14px}
+    .tile h3{font-size:15px;font-stretch:100%}
+    .vbars{gap:4px}
+    .vbars em{font-size:11px;font-stretch:62%}
+    .vbars span{font-size:11px;font-stretch:75%}
+    .race__name small{display:none}
+    .sim__field{width:100%}
+    .dates b{font-size:16px}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#tese">Pular para o conteúdo</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+  <symbol id="i-log" viewBox="0 0 24 24"><path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z"/><path d="M6 18h12"/><path d="M6 14h12"/><rect width="12" height="12" x="6" y="10"/></symbol>
+  <symbol id="i-med" viewBox="0 0 24 24"><path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></symbol>
+  <symbol id="i-dc" viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></symbol>
+  <symbol id="i-edu" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+  <symbol id="i-var" viewBox="0 0 24 24"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7"/></symbol>
+</svg>
+
+<div class="topbar">Material publicitário</div>
+<header class="hd">
+  <div class="hd__in">
+    <a class="hd__logo" href="#topo"><img src="assets/logo.svg" alt="ALZR11, Alianza Trust Renda Imobiliária FII" width="312" height="37"></a>
+    <nav class="hd__nav" aria-label="Principal">
+      <a href="#tese">O fundo</a><a href="#performance">Performance</a><a href="#carteira">Carteira</a><a href="#rendimento">Rendimento</a><a href="#faq">FAQ</a>
+    </nav>
+    <div class="hd__r">
+      <a class="hd__btn" href="#" data-cta>Mais informações</a>
+      <button class="burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+  <nav class="menu" id="menu" data-open="false" aria-label="Menu">
+    <a href="#tese">O fundo</a><a href="#performance">Performance</a><a href="#carteira">Carteira</a><a href="#rendimento">Rendimento</a><a href="#faq">FAQ</a>
+  </nav>
+</header>
+
+<main>
+<!-- DOBRA 1: ABERTURA -->
+<section class="hero on-dark" id="topo" aria-label="Abertura">
+  <div class="hero__pin">
+    <div class="hero__stage">
+      <div class="hero__media">
+        <div class="hero__photo"><img src="assets/hero.jpg" alt="Imóvel de renda urbana visto de cima, com prédios comerciais e a Ponte Estaiada de São Paulo ao fundo" width="1600" height="780"></div>
+        <div class="hero__stripe" aria-hidden="true"></div>
+      </div>
+      <div class="hero__scrim" aria-hidden="true"></div>
+      <div class="hero__copy">
+        <div class="wrap">
+          <img class="hero__logo" src="assets/logo-branco.svg" alt="ALZR11, Alianza Trust Renda Imobiliária FII" width="312" height="37">
+          <h1 class="d1 hero__t">Conheça o FII dono dos imóveis fundamentais para a economia brasileira!</h1>
+          <p class="hero__p">O ALZR11 é um fundo com mais de R$ 1,7 bilhão em patrimônio, que investe em 26 imóveis alugados para 20 locatários de setores como logística, medicina diagnóstica, data centers e educação, e reúne hoje mais de 213 mil cotistas.</p>
+          <a class="afb" href="#" data-cta><span class="afb__t">Clique aqui para ter mais informações</span><span class="afb__fill"></span><span class="afb__alt" aria-hidden="true">Clique aqui para ter mais informações</span><span class="afb__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span></a>
+          <p class="hero__legal">Leia o regulamento do fundo antes de investir, especialmente os fatores de risco.</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero__stats">
+      <ul>
+        <li><span class="n">180%</span><p>de retorno desde o IPO, contra 167% do IFIX</p></li>
+        <li><span class="n">+213 mil</span><p>cotistas na B3</p></li>
+        <li><span class="n">7%</span><p>de desconto na cota</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- cotação -->
+<div class="tick">
+  <div class="tick__in">
+    <span class="tick__sym">ALZR11</span>
+    <dl>
+      <div><dt>Cota (set/26)</dt><dd>R$ 9,94</dd></div>
+      <div><dt>Valor patrimonial</dt><dd>R$ 10,69</dd></div>
+      <div><dt>Dividend yield anualizado</dt><dd>10,1%</dd></div>
+      <div><dt>Último rendimento</dt><dd>R$ 0,084/cota</dd></div>
+    </dl>
+  </div>
+</div>
+
+<!-- DOBRA 2: O SETOR E A TESE -->
+<section class="sec" id="tese">
+  <div class="wrap">
+    <div class="tese__top">
+      <h2 class="d2">Um FII essencial para o Brasil</h2>
+      <div>
+        <p class="lead">O país funciona porque hospitais atendem, escolas ensinam, galpões armazenam e data centers processam informação. Por trás de cada um desses serviços existe um imóvel, e o ALZR11 reúne 26 deles, com contratos de prazo médio de 9,4 anos.</p>
+        <span class="src">Fonte: Relatório Gerencial ALZR11, Setembro/2026</span>
+      </div>
+    </div>
+
+    <div class="sobre">
+      <!-- Fotos e nomes: página de portfólio do site de RI do ALZR11.
+           Fora do slide: Santillana (vendido), Coca-Cola FEMSA (venda assinada em 29/10/2026) e Assaí Guarujá (compra ainda não concluída). -->
+      <div class="port" role="group" aria-roledescription="carrossel" aria-label="Imóveis do portfólio do ALZR11">
+        <div class="port__track" tabindex="0" aria-label="Fotos dos imóveis; use as setas do teclado para passar">
+          <figure class="port__s"><img src="assets/portfolio/dupont.jpg" alt="Edifício DuPont em Alphaville" width="1200" height="700"><figcaption><b>DuPont</b>Edifício comercial em Alphaville, Barueri/SP</figcaption></figure>
+          <figure class="port__s"><img src="assets/portfolio/shopee.jpg" alt="Centro de distribuição Shopee em Ibitinga" width="1200" height="613" loading="lazy"><figcaption><b>Shopee</b>Centro de distribuição em Ibitinga/SP</figcaption></figure>
+          <figure class="port__s"><img src="assets/portfolio/scala.jpg" alt="Scala Data Center em Porto Alegre" width="649" height="506" loading="lazy"><figcaption><b>Scala</b>Data center em Porto Alegre/RS</figcaption></figure>
+          <figure class="port__s"><img src="assets/portfolio/mercado-livre.jpg" alt="Centro de distribuição Mercado Livre em Ribeirão Preto, visto do alto" width="649" height="506" loading="lazy"><figcaption><b>Mercado Livre</b>Centro de distribuição em Ribeirão Preto/SP</figcaption></figure>
+          <figure class="port__s"><img src="assets/portfolio/oba-sumare.jpg" alt="Centro de distribuição Oba em Sumaré" width="649" height="506" loading="lazy"><figcaption><b>Oba</b>Centro de distribuição em Sumaré/SP</figcaption></figure>
+          <figure class="port__s"><img src="assets/portfolio/pueri-domus.jpg" alt="Edifício Pueri Domus em São Paulo" width="1200" height="700" loading="lazy"><figcaption><b>Pueri Domus</b>Edifício educacional em São Paulo/SP</figcaption></figure>
+          <figure class="port__s"><img src="assets/portfolio/assai-rj.jpg" alt="Loja Assaí no Rio de Janeiro" width="1200" height="800" loading="lazy"><figcaption><b>Assaí</b>Loja de varejo alimentício no Rio de Janeiro/RJ</figcaption></figure>
+          <figure class="port__s"><img src="assets/portfolio/bauducco.jpg" alt="Edifício Pandurata (Bauducco) em Guarulhos" width="1200" height="700" loading="lazy"><figcaption><b>Pandurata (Bauducco)</b>Edifício comercial em Guarulhos/SP</figcaption></figure>
+          <figure class="port__s"><img src="assets/portfolio/dasa-sumare.jpg" alt="Edifício DASA Sumaré em São Paulo" width="649" height="506" loading="lazy"><figcaption><b>DASA Sumaré</b>Edifício comercial e laboratório em São Paulo/SP</figcaption></figure>
+          <figure class="port__s"><img src="assets/portfolio/air-liquide.jpg" alt="Imóvel Air Liquide na Vila Carioca, visto do alto" width="1200" height="899" loading="lazy"><figcaption><b>Air Liquide</b>Centro de distribuição na Vila Carioca, São Paulo/SP</figcaption></figure>
+          <figure class="port__s"><img src="assets/portfolio/sky.jpg" alt="Data center SKY em Santana de Parnaíba, visto do alto" width="649" height="506" loading="lazy"><figcaption><b>SKY</b>Data center em Santana de Parnaíba/SP</figcaption></figure>
+          <figure class="port__s"><img src="assets/portfolio/cdb-morumbi.jpg" alt="Centro de diagnóstico CDB Morumbi" width="1200" height="800" loading="lazy"><figcaption><b>CDB Morumbi</b>Centro de diagnóstico em São Paulo/SP</figcaption></figure>
+          <figure class="port__s"><img src="assets/portfolio/atento.jpg" alt="Prédio Atento em Del Castilho, visto do alto" width="1200" height="694" loading="lazy"><figcaption><b>Atento</b>Contact center em Del Castilho, Rio de Janeiro/RJ</figcaption></figure>
+          <figure class="port__s"><img src="assets/portfolio/decathlon.jpg" alt="Decathlon Morumbi com a Ponte Estaiada ao fundo" width="649" height="506" loading="lazy"><figcaption><b>Decathlon Morumbi</b>Edifício comercial e varejo em São Paulo/SP</figcaption></figure>
+          <figure class="port__s"><img src="assets/portfolio/dasa-ascendino.jpg" alt="Edifício DASA Ascendino Reis em São Paulo" width="649" height="506" loading="lazy"><figcaption><b>DASA Ascendino Reis</b>Edifício comercial e laboratório em São Paulo/SP</figcaption></figure>
+          <figure class="port__s"><img src="assets/portfolio/cdb-ana-rosa.jpg" alt="Centro de diagnóstico CDB Ana Rosa na Vila Mariana" width="649" height="506" loading="lazy"><figcaption><b>CDB Ana Rosa</b>Centro de diagnóstico na Vila Mariana, São Paulo/SP</figcaption></figure>
+          <figure class="port__s"><img src="assets/portfolio/fleury.jpg" alt="Entrada do laboratório Fleury em Campinas" width="480" height="350" loading="lazy"><figcaption><b>Fleury</b>Laboratório diagnóstico em Campinas/SP</figcaption></figure>
+          <figure class="port__s"><img src="assets/portfolio/oscar-freire.jpg" alt="Fachada de vidro do Oscar Freire Office" width="445" height="653" loading="lazy"><figcaption><b>Oscar Freire Office</b>Edifício comercial nos Jardins, São Paulo/SP</figcaption></figure>
+          <figure class="port__s"><img src="assets/portfolio/globo.jpg" alt="Edifício Globo no Rio de Janeiro, visto do alto" width="649" height="506" loading="lazy"><figcaption><b>Globo</b>Edifício comercial no Rio de Janeiro/RJ</figcaption></figure>
+          <figure class="port__s"><img src="assets/portfolio/brf-guarulhos.jpg" alt="Centro de distribuição BRF em Guarulhos, visto do alto" width="1200" height="899" loading="lazy"><figcaption><b>BRF Guarulhos</b>Centro de distribuição refrigerado em Guarulhos/SP</figcaption></figure>
+          <figure class="port__s"><img src="assets/portfolio/brf-bauru.jpg" alt="Centro de distribuição BRF em Bauru, visto do alto" width="1200" height="899" loading="lazy"><figcaption><b>BRF Bauru</b>Centro de distribuição refrigerado em Bauru/SP</figcaption></figure>
+          <figure class="port__s"><img src="assets/portfolio/oba-sbc.jpg" alt="Loja Oba em São Bernardo do Campo" width="649" height="506" loading="lazy"><figcaption><b>Oba São Bernardo</b>Loja de varejo alimentício em São Bernardo do Campo/SP</figcaption></figure>
+          <figure class="port__s"><img src="assets/portfolio/oba-rio-preto.jpg" alt="Loja Oba em São José do Rio Preto" width="649" height="506" loading="lazy"><figcaption><b>Oba Rio Preto</b>Loja de varejo alimentício em São José do Rio Preto/SP</figcaption></figure>
+        </div>
+        <div class="port__nav">
+          <button type="button" aria-label="Imóvel anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <button type="button" aria-label="Próximo imóvel"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        </div>
+        <div class="port__bar" aria-hidden="true"><i></i></div>
+      </div>
+      <div class="sobre__txt">
+        <h3 class="d3">Sobre o ALZR11</h3>
+        <p class="lead">O ALZR11 é um fundo imobiliário gerido pela Alianza Gestão de Recursos, que investe em imóveis de renda urbana, edifícios comerciais e logísticos, recebe os aluguéis e distribui os rendimentos mensalmente aos cotistas. Está listado na B3 desde janeiro de 2018.</p>
+      </div>
+    </div>
+
+    <div class="grow">
+      <h3 class="d3">Histórico de crescimento do ALZR11</h3>
+      <div class="grow__g">
+        <div data-reveal>
+          <div class="n grow__v">213.940</div>
+          <p class="grow__l">cotistas em set/2026</p>
+          <div id="chartCotistas"></div>
+          <span class="src">Em milhares de cotistas, no fim de cada ano e em set/2026. Fonte: Relatórios Gerenciais ALZR11</span>
+        </div>
+        <div data-reveal>
+          <div class="n grow__v">R$ 1,758 bi</div>
+          <p class="grow__l">de patrimônio líquido em set/2026</p>
+          <div id="chartPL"></div>
+          <span class="src">Em R$ bilhões, no fim de cada ano e em set/2026. Fonte: Relatórios Gerenciais ALZR11</span>
+        </div>
+      </div>
+      <p class="note" id="noteHist"><b>A confirmar</b>O relatório de set/2026 traz só o valor atual do patrimônio. A série ano a ano ainda precisa ser levantada.</p>
+      <div class="grow__foot">
+        <p class="lead">Hoje o fundo soma cerca de R$ 1,76 bilhão em patrimônio líquido, valor patrimonial de aproximadamente R$ 10,69 por cota e mais de 213 mil cotistas.</p>
+        <div class="cta"><a class="afb" href="#" data-cta><span class="afb__t">Clique aqui para ter mais informações</span><span class="afb__fill"></span><span class="afb__alt" aria-hidden="true">Clique aqui para ter mais informações</span><span class="afb__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOBRA 3: PERFORMANCE E RENDIMENTOS -->
+<section class="sec sec--fog" id="performance">
+  <div class="wrap">
+    <div class="perf__top">
+      <h2 class="d2">Performance histórica desde o IPO</h2>
+      <p class="lead">Desde o IPO, em janeiro de 2018, o ALZR11 acumula retorno de 180%, contra 167% do IFIX no mesmo período.</p>
+    </div>
+
+    <div class="race" data-reveal role="img" aria-label="Retorno acumulado desde janeiro de 2018: ALZR11 180%, IFIX 167%">
+      <div class="race__row"><div class="race__bar race__bar--a" style="--w:100%"><span class="race__name">ALZR11<small>desde jan/2018</small></span><span class="n">180%</span></div></div>
+      <div class="race__row"><div class="race__bar race__bar--b" style="--w:92.8%"><span class="race__name">IFIX<small>mesmo período</small></span><span class="n">167%</span></div></div>
+    </div>
+    <span class="src">Fonte: Relatório Gerencial ALZR11</span>
+    <p class="note"><b>Confirmar com a gestora</b>180 e 167 parecem ser pontos do gráfico do relatório (pág. 11), não percentuais de retorno; a pág. 12 traz retorno total de 102,2%. Falta o número oficial do ALZR11 e do IFIX na data-base. Este número aparece também na abertura e em "Por que o ALZR11".</p>
+
+    <div class="dist">
+      <div data-reveal>
+        <h3 class="d3">Histórico de distribuição</h3>
+        <p class="dist__sub">Rendimentos mensais por cota, de janeiro a setembro de 2026</p>
+        <div class="vbars" role="img" aria-label="Rendimento por cota em 2026: janeiro, R$ 0,0851; de fevereiro a junho, R$ 0,0836; de julho a setembro, R$ 0,0840.">
+          <div style="--h:1"><em>0,0851</em><i></i><span>jan</span></div>
+          <div style="--h:.982"><em>0,0836</em><i></i><span>fev</span></div>
+          <div style="--h:.982"><em>0,0836</em><i></i><span>mar</span></div>
+          <div style="--h:.982"><em>0,0836</em><i></i><span>abr</span></div>
+          <div style="--h:.982"><em>0,0836</em><i></i><span>mai</span></div>
+          <div style="--h:.982"><em>0,0836</em><i></i><span>jun</span></div>
+          <div style="--h:.987"><em>0,0840</em><i></i><span>jul</span></div>
+          <div style="--h:.987"><em>0,0840</em><i></i><span>ago</span></div>
+          <div style="--h:.987"><em>0,0840</em><i></i><span>set</span></div>
+        </div>
+        <span class="src">Fonte: Relatório Gerencial ALZR11, Setembro/2026</span>
+        <p class="note"><b>A confirmar</b>Barras conforme o gráfico da pág. 11 do relatório. A tabela da pág. 4 traz R$ 0,0836 em janeiro e R$ 0,0850 em dez/25.</p>
+        <p class="dist__txt">O fundo distribuiu R$ 0,0836 por cota majoritariamente de janeiro a junho de 2026 e R$ 0,0840 por cota de julho a setembro. A distribuição de setembro, de R$ 0,084 por cota, foi paga em 23 de outubro de 2026 aos cotistas posicionados em 16 de outubro. A projeção da gestora para o segundo semestre é de R$ 0,082 a R$ 0,084 por cota em rendimentos recorrentes mensais.</p>
+      </div>
+      <div>
+        <div class="n dist__big">R$ 0,084</div>
+        <p class="dist__l">por cota, distribuição de setembro</p>
+        <div class="dates">
+          <div><span>Posição</span><b>16/10/2026</b></div>
+          <i aria-hidden="true"></i>
+          <div><span>Pagamento</span><b>23/10/2026</b></div>
+        </div>
+        <p class="proj">Projeção da gestora para o segundo semestre<b>R$ 0,082 a R$ 0,084 por cota</b></p>
+      </div>
+    </div>
+
+    <div class="sim on-dark" id="simulacao">
+      <div>
+        <h3 class="d3">Simulação com o rendimento de setembro</h3>
+        <p class="sim__base">Base: R$ 0,084 por cota</p>
+        <label class="sim__lbl" for="simQtd">Cotas</label>
+        <div class="sim__row">
+          <input class="sim__field" id="simQtd" type="text" inputmode="numeric" value="1.000" autocomplete="off">
+          <button class="sim__p" type="button" data-q="100" aria-pressed="false">100</button>
+          <button class="sim__p" type="button" data-q="1000" aria-pressed="true">1.000</button>
+          <button class="sim__p" type="button" data-q="10000" aria-pressed="false">10.000</button>
+        </div>
+        <input class="sim__range" id="simRange" type="range" min="100" max="10000" step="100" value="1000" aria-label="Número de cotas">
+      </div>
+      <div class="sim__out" aria-live="polite">
+        <div class="n sim__v" id="simOut">R$ 84,00</div>
+        <p class="sim__c">de rendimento mensal com <span id="simCap">1.000 cotas</span></p>
+      </div>
+      <p class="sim__legal">Simulação matemática com base em R$ 0,084 por cota, não é garantia de rendimentos futuros.</p>
+    </div>
+
+    <div class="cta"><a class="afb" href="#" data-cta><span class="afb__t">Clique aqui para ter mais informações</span><span class="afb__fill"></span><span class="afb__alt" aria-hidden="true">Clique aqui para ter mais informações</span><span class="afb__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span></a></div>
+  </div>
+</section>
+
+<!-- DOBRA 4: CONHEÇA A CARTEIRA -->
+<section class="sec" id="carteira" style="padding-bottom:clamp(56px,6vw,88px)">
+  <div class="wrap">
+    <h2 class="d2">Conheça os ativos do ALZR11</h2>
+    <!-- Para usar foto em um bloco, inclua <img src="assets/..." alt="..."> como primeiro filho do .tile -->
+    <ul class="tiles">
+      <li class="tile tile--a"><svg aria-hidden="true"><use href="#i-log"/></svg><h3>Galpões logísticos</h3></li>
+      <li class="tile tile--b"><svg aria-hidden="true"><use href="#i-med"/></svg><h3>Imóveis de saúde</h3></li>
+      <li class="tile tile--c"><svg aria-hidden="true"><use href="#i-dc"/></svg><h3>Data centers</h3></li>
+      <li class="tile tile--d"><svg aria-hidden="true"><use href="#i-edu"/></svg><h3>Polos educacionais</h3></li>
+    </ul>
+    <ul class="kpis">
+      <li><div class="n">26</div><p>ativos e 20 locatários</p></li>
+      <li><div class="n">9,4 anos</div><p>de prazo médio dos contratos (WALE)</p></li>
+      <li><div class="n">R$ 388 mi</div><p>de caixa, aproximadamente</p></li>
+      <li><div class="d3">Diversificação</div><p>entre imóveis logísticos, edifícios comerciais, data centers, varejo e outros segmentos</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="disc on-dark" aria-labelledby="discT">
+  <div class="wrap disc__in">
+    <div class="disc__txt">
+      <h2 class="d2" id="discT">Cota com desconto patrimonial</h2>
+      <p>Em setembro, a cota fechou a R$ 9,94, cerca de 7% abaixo do valor patrimonial de R$ 10,69 por cota. Além disso, o dividend yield anualizado sobre o preço de mercado é de 10,1%.</p>
+      <span class="src">Fonte: Relatório Gerencial ALZR11, Setembro/2026, páginas 2 e 3</span>
+    </div>
+    <div class="disc__cmp" data-reveal>
+      <div class="cmp__row">
+        <div class="cmp__h"><span>Valor patrimonial</span><span class="n">R$ 10,69</span></div>
+        <div class="cmp__t"><i style="--w:100%"></i></div>
+      </div>
+      <div class="cmp__row">
+        <div class="cmp__h"><span>Cota em setembro</span><span class="n">R$ 9,94</span></div>
+        <div class="cmp__t"><i style="--w:93%"></i></div>
+        <p class="cmp__gap">cerca de 7% abaixo</p>
+      </div>
+      <div class="disc__dy"><span class="n">10,1%</span><span>dividend yield anualizado</span></div>
+    </div>
+    <div class="cta"><a class="afb afb--light" href="#" data-cta><span class="afb__t">Clique aqui para ter mais informações</span><span class="afb__fill"></span><span class="afb__alt" aria-hidden="true">Clique aqui para ter mais informações</span><span class="afb__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span></a></div>
+  </div>
+</section>
+
+<!-- DOBRA 5: OS SETORES ESSENCIAIS DA CARTEIRA -->
+<section class="sec sec--fog" id="setores">
+  <div class="wrap">
+    <h2 class="d2">Imóveis que o Brasil usa todos os dias</h2>
+    <ul class="set">
+      <li><svg aria-hidden="true"><use href="#i-log"/></svg><h3>Logística</h3><p>Galpões que armazenam e distribuem mercadorias</p></li>
+      <li><svg aria-hidden="true"><use href="#i-med"/></svg><h3>Medicina diagnóstica</h3><p>Imóveis que sustentam o atendimento médico</p></li>
+      <li><svg aria-hidden="true"><use href="#i-dc"/></svg><h3>Data centers</h3><p>Estrutura para a economia digital</p></li>
+      <li><svg aria-hidden="true"><use href="#i-edu"/></svg><h3>Educação</h3><p>Polos de ensino</p></li>
+      <li><svg aria-hidden="true"><use href="#i-var"/></svg><h3>Varejo e comércio</h3><p>Imóveis do cotidiano das pessoas</p></li>
+    </ul>
+    <span class="src">Fonte: Relatório Gerencial ALZR11, Setembro/2026</span>
+    <div class="cta"><a class="afb" href="#" data-cta><span class="afb__t">Clique aqui para ter mais informações</span><span class="afb__fill"></span><span class="afb__alt" aria-hidden="true">Clique aqui para ter mais informações</span><span class="afb__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span></a></div>
+  </div>
+</section>
+
+<!-- DOBRA 6: QUEM ALUGA OS IMÓVEIS DO ALZR11 -->
+<section class="sec" id="locatarios">
+  <div class="wrap loc">
+    <div>
+      <div class="n loc__n" aria-hidden="true">20</div>
+      <h2 class="d2 d2--sm">Empresas de setores essenciais já são locatárias do ALZR11</h2>
+      <p class="lead">O ALZR11 tem 20 locatários de setores como logística, medicina diagnóstica, data centers e educação.</p>
+      <span class="src">Fonte: Relatório Gerencial ALZR11, Setembro/2026</span>
+    </div>
+    <div>
+      <!-- Nomes: relatório de set/2026, págs. 16 a 28. Origem de cada arquivo: logos-locatarios/ORIGEM.md.
+           Fora da lista: Santillana (imóvel vendido) e Coca-Cola FEMSA (venda assinada em 29/10/2026). -->
+      <ul class="logos" tabindex="0" aria-label="Locatários do ALZR11">
+        <li><img src="assets/locatarios/dupont.svg" alt="DuPont"></li>
+        <li><img src="assets/locatarios/shopee.svg" alt="Shopee"></li>
+        <li><img src="assets/locatarios/scala.png" alt="Scala Data Centers"></li>
+        <li><img src="assets/locatarios/mercado-livre.png" alt="Mercado Livre"></li>
+        <li><img src="assets/locatarios/oba.svg" alt="Oba Hortifruti"></li>
+        <li><img src="assets/locatarios/pueri-domus.png" alt="Pueri Domus"></li>
+        <li><img src="assets/locatarios/assai.svg" alt="Assaí Atacadista"></li>
+        <li><img src="assets/locatarios/bauducco.svg" alt="Bauducco"></li>
+        <li><img src="assets/locatarios/dasa.svg" alt="Dasa"></li>
+        <li><img src="assets/locatarios/air-liquide.svg" alt="Air Liquide"></li>
+        <li><img src="assets/locatarios/sky.svg" alt="SKY"></li>
+        <li><img src="assets/locatarios/cdb.svg" alt="CDB"></li>
+        <li><img src="assets/locatarios/atento.png" alt="Atento"></li>
+        <li><img src="assets/locatarios/decathlon.svg" alt="Decathlon"></li>
+        <li><img src="assets/locatarios/fleury.png" alt="Fleury"></li>
+        <li><img src="assets/locatarios/globo.svg" alt="Grupo Globo"></li>
+      </ul>
+    </div>
+    <div class="cta"><a class="afb" href="#" data-cta><span class="afb__t">Clique aqui para ter mais informações</span><span class="afb__fill"></span><span class="afb__alt" aria-hidden="true">Clique aqui para ter mais informações</span><span class="afb__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span></a></div>
+  </div>
+</section>
+
+<!-- DOBRA 7: COMO FUNCIONA O RENDIMENTO -->
+<section class="sec on-dark" id="rendimento">
+  <div class="wrap">
+    <h2 class="d2">Como funciona o rendimento do ALZR11</h2>
+    <ol class="flow">
+      <li><div class="flow__h n" aria-hidden="true">1</div><h3>Aquisição de imóveis</h3><p>A gestora adquire imóveis em setores que considera essenciais como logística, medicina diagnóstica, data centers e educação.</p></li>
+      <li><div class="flow__h n" aria-hidden="true">2</div><h3>Locação para empresas</h3><p>Os imóveis estão alugados para diversos locatários, com contratos longos, com média de 9,4 anos.</p></li>
+      <li><div class="flow__h n" aria-hidden="true">3</div><h3>Geração de receita</h3><p>Os aluguéis pagos formam a receita recorrente do fundo.</p></li>
+      <li><div class="flow__h n" aria-hidden="true">4</div><h3>Distribuição mensal</h3><p>Parte do resultado é distribuído mensalmente aos cotistas, com isenção de Imposto de Renda para pessoa física que atenda aos requisitos legais.</p></li>
+    </ol>
+    <div class="cta"><a class="afb afb--light" href="#" data-cta><span class="afb__t">Clique aqui para ter mais informações</span><span class="afb__fill"></span><span class="afb__alt" aria-hidden="true">Clique aqui para ter mais informações</span><span class="afb__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span></a></div>
+  </div>
+</section>
+
+<!-- DOBRA 8: DIFERENCIAIS -->
+<section class="sec" id="porque">
+  <div class="wrap">
+    <h2 class="d2">Por que o ALZR11</h2>
+    <ul class="why">
+      <li><div class="n">26</div><h3>Imóveis essenciais</h3><p>Logística, medicina diagnóstica, data centers e educação.</p></li>
+      <li><div class="n">9,4 anos</div><h3>Contratos longos</h3><p>Prazo médio (WALE) de 9,4 anos.</p></li>
+      <li><div class="n">180%</div><h3>Retorno histórico</h3><p>180% desde o IPO, contra 167% do IFIX.</p></li>
+      <li><div class="n">R$ 0,084</div><h3>Renda mensal</h3><p>Rendimentos estáveis em 2026, de R$ 0,0836 a R$ 0,084 por cota.</p></li>
+      <li><div class="n">R$ 388 mi</div><h3>Posição de caixa</h3><p>Cerca de R$ 388 milhões.</p></li>
+      <li><div class="n">R$ 2,93 mi</div><h3>Liquidez na B3</h3><p>Volume médio diário de cerca de R$ 2,93 milhões e mais de 213 mil cotistas.</p></li>
+    </ul>
+    <div class="cta"><a class="afb" href="#" data-cta><span class="afb__t">Clique aqui para ter mais informações</span><span class="afb__fill"></span><span class="afb__alt" aria-hidden="true">Clique aqui para ter mais informações</span><span class="afb__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span></a></div>
+  </div>
+</section>
+
+<!-- DOBRA 9: PERGUNTAS FREQUENTES -->
+<section class="sec sec--fog" id="faq">
+  <div class="wrap faq">
+    <div class="faq__head">
+      <h2 class="d2">Perguntas frequentes</h2>
+    </div>
+    <div class="faq__list">
+      <details open>
+        <summary>O que é o ALZR11?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <p>Fundo imobiliário gerido pela Alianza Gestão de Recursos que investe em imóveis de renda urbana, edifícios comerciais, logísticos, dentre outros, buscando renda mensal para os cotistas.</p>
+      </details>
+      <details>
+        <summary>Há tributação sobre os rendimentos?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <p>Para pessoa física, os rendimentos distribuídos por fundos imobiliários negociados em bolsa contam com isenção de Imposto de Renda, desde que atendidos os requisitos legais (Lei 9.779/99), como o investidor deter menos de 10% das cotas do fundo e o fundo contar com mais de 50 cotistas.</p>
+      </details>
+      <details>
+        <summary>As cotas têm liquidez?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <p>Sim. São negociadas diariamente na B3 sob o código ALZR11. Em setembro, o volume diário médio foi de cerca de R$ 2,93 milhões, e o fundo chegou a 213.940 cotistas.</p>
+      </details>
+      <details>
+        <summary>Quais são os riscos?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <p>Como todo FII, o ALZR11 está sujeito a riscos como inadimplência de locatários, imóveis vagos, endividamento e variação no preço das cotas. Leia o regulamento antes de investir.</p>
+      </details>
+    </div>
+    <div class="cta"><a class="afb" href="#" data-cta><span class="afb__t">Clique aqui para ter mais informações</span><span class="afb__fill"></span><span class="afb__alt" aria-hidden="true">Clique aqui para ter mais informações</span><span class="afb__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span></a></div>
+  </div>
+</section>
+</main>
+
+<!-- DOBRA FINAL: DISCLAIMER E RODAPÉ -->
+<footer class="ft">
+  <div class="wrap">
+    <img class="ft__logo" src="assets/logo-branco.svg" alt="ALZR11, Alianza Trust Renda Imobiliária FII" width="312" height="37" loading="lazy">
+    <p class="ft__legal">Este material é meramente informativo e não constitui oferta, recomendação ou solicitação para aquisição de valores mobiliários. Rentabilidade passada não representa garantia de rentabilidade futura. O investimento em fundos imobiliários não conta com garantia do administrador, do gestor, de qualquer mecanismo de seguro ou do Fundo Garantidor de Créditos – FGC. Antes de investir, leia atentamente o regulamento e os documentos do fundo. Consulte sempre um assessor de investimentos antes de tomar qualquer decisão. Gestão: Alianza Gestão de Recursos.</p>
+    <div class="ft__bar"><span>© 2026 ALZR11, Alianza Trust Renda Imobiliária FII</span><span>Material publicitário</span></div>
+  </div>
+</footer>
+
+<script>
+/* ===== CONTEÚDO PENDENTE: preencha aqui e a página se ajusta sozinha ===== */
+var CTA_URL = '#';   // destino de todos os botões ("a definir" no briefing)
+var HIST = {
+  // Fonte: relatórios gerenciais de dezembro de cada ano e de set/2026.
+  // Cotistas em milhares; 2018 vem da série do relatório de dez/2020 (o de dez/2018 traz 3.019 até 17/01/2019).
+  cotistas: [{ano:'2018',v:2.782},{ano:'2019',v:34.681},{ano:'2020',v:77.58},{ano:'2021',v:97.533},{ano:'2022',v:118.293},{ano:'2023',v:149.502},{ano:'2024',v:155.269},{ano:'2025',v:178.582},{ano:'set/26',v:213.94}],
+  // Patrimônio líquido em R$ bilhões
+  pl: [{ano:'2018',v:0.097110},{ano:'2019',v:0.270773},{ano:'2020',v:0.459379},{ano:'2021',v:0.642677},{ano:'2022',v:0.739972},{ano:'2023',v:1.039173},{ano:'2024',v:1.261927},{ano:'2025',v:1.300995},{ano:'set/26',v:1.757565}]
+};
+/* ======================================================================== */
+
+(function(){
+  /* destino dos botões */
+  document.querySelectorAll('[data-cta]').forEach(function(a){
+    if(CTA_URL==='#'){ a.addEventListener('click',function(e){ e.preventDefault(); }); }
+    else { a.href=CTA_URL; a.target='_blank'; a.rel='noopener'; }
+  });
+
+  /* menu */
+  var b=document.querySelector('.burger'), m=document.getElementById('menu');
+  b.addEventListener('click',function(){ var o=m.getAttribute('data-open')==='true'; m.setAttribute('data-open',String(!o)); b.setAttribute('aria-expanded',String(!o)); });
+  m.addEventListener('click',function(e){ if(e.target.closest('a')){ m.setAttribute('data-open','false'); b.setAttribute('aria-expanded','false'); } });
+
+  /* gráficos históricos: só aparecem com dados reais */
+  function bars(id,data,fmt,label){
+    if(!data||!data.length) return false;
+    var max=Math.max.apply(null,data.map(function(d){return d.v;}));
+    var el=document.createElement('div'); el.className='vbars'; el.setAttribute('role','img'); el.setAttribute('aria-label',label);
+    data.forEach(function(d){
+      var c=document.createElement('div'); c.style.setProperty('--h',(d.v/max).toFixed(3));
+      c.innerHTML='<em>'+fmt(d.v)+'</em><i></i><span>'+d.ano+'</span>'; el.appendChild(c);
+    });
+    document.getElementById(id).appendChild(el); return true;
+  }
+  var a1=bars('chartCotistas',HIST.cotistas,function(v){return v.toFixed(1).replace('.',',');},'Evolução do número de cotistas, em milhares: de 2,8 mil no fim de 2018 a 213,9 mil em setembro de 2026');
+  var a2=bars('chartPL',HIST.pl,function(v){return v.toFixed(3).replace('.',',');},'Evolução do patrimônio líquido, em R$ bilhões: de 0,097 no fim de 2018 a 1,758 em setembro de 2026');
+  if(a1&&a2) document.getElementById('noteHist').hidden=true;
+
+  /* barras crescem quando entram na tela */
+  var rev=document.querySelectorAll('[data-reveal]');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target); } }); },{threshold:.2});
+    rev.forEach(function(t){ io.observe(t); });
+  } else { rev.forEach(function(t){ t.classList.add('is-in'); }); }
+
+  /* simulação: cotas × rendimento de setembro */
+  var R=0.084, MIN=1, MAX=1000000, RMIN=100, RMAX=10000;
+  var f=document.getElementById('simQtd'), r=document.getElementById('simRange'), out=document.getElementById('simOut'), cap=document.getElementById('simCap'), ps=document.querySelectorAll('.sim__p');
+  function br(n,c){ return n.toLocaleString('pt-BR',{minimumFractionDigits:c,maximumFractionDigits:c}); }
+  function setQ(q,keepField){
+    q=Math.min(MAX,Math.max(MIN,Math.round(q)||MIN));
+    out.textContent='R$ '+br(q*R,2);
+    cap.textContent=br(q,0)+(q===1?' cota':' cotas');
+    if(!keepField) f.value=br(q,0);
+    var cl=Math.min(RMAX,Math.max(RMIN,q)); r.value=cl;
+    r.style.setProperty('--f',((cl-RMIN)/(RMAX-RMIN)*100).toFixed(1)+'%');
+    ps.forEach(function(p){ p.setAttribute('aria-pressed',String(Number(p.dataset.q)===q)); });
+  }
+  f.addEventListener('input',function(){ var n=Number(f.value.replace(/\D/g,'')); if(n) setQ(n,true); });
+  f.addEventListener('blur',function(){ setQ(Number(f.value.replace(/\D/g,''))||1000); });
+  r.addEventListener('input',function(){ setQ(Number(r.value)); });
+  ps.forEach(function(p){ p.addEventListener('click',function(){ setQ(Number(p.dataset.q)); }); });
+  setQ(1000);
+
+  /* abertura: a diagonal do logo abre a foto conforme o scroll */
+  var hero=document.querySelector('.hero'), stage=hero.querySelector('.hero__stage'), copy=hero.querySelector('.hero__copy .wrap'),
+      scrim=hero.querySelector('.hero__scrim'), pin=hero.querySelector('.hero__pin');
+  var SLOPE=1.34, STRIPES=112, CLEAR=20, x0=0;
+  var desk=matchMedia('(min-width:1024px)'), still=matchMedia('(prefers-reduced-motion: reduce)');
+  function smooth(a,b,v){ v=Math.min(1,Math.max(0,(v-a)/(b-a))); return v*v*(3-2*v); }
+  function measure(){
+    if(!desk.matches) return;
+    var s=stage.getBoundingClientRect();
+    stage.style.setProperty('--dx',(s.height*SLOPE).toFixed(1)+'px');
+    var need=0;
+    copy.querySelectorAll('img,h1,p,a').forEach(function(el){
+      var rects;
+      if(el.tagName==='IMG'||el.tagName==='A'){ rects=[el.getBoundingClientRect()]; }
+      else { var rg=document.createRange(); rg.selectNodeContents(el); rects=rg.getClientRects(); }
+      for(var i=0;i<rects.length;i++){ var c=rects[i]; need=Math.max(need,(c.right-s.left)+(c.bottom-s.top)*SLOPE); }
+    });
+    x0=need+STRIPES+CLEAR;
+    paint();
+  }
+  function progress(){
+    var range=hero.offsetHeight-pin.offsetHeight;
+    if(range<=1||still.matches) return 0;
+    return Math.min(1,Math.max(0,-hero.getBoundingClientRect().top+92)/range);
+  }
+  var ticking=false;
+  function paint(){
+    ticking=false;
+    if(!desk.matches) return;
+    var p=progress(), e=smooth(0,1,p);
+    stage.style.setProperty('--x',(x0*(1-e)).toFixed(1)+'px');
+    stage.style.setProperty('--p',e.toFixed(3));
+    scrim.style.opacity=smooth(0,.38,p).toFixed(3);
+  }
+  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(paint); } }
+  addEventListener('scroll',onScroll,{passive:true});
+  addEventListener('resize',measure);
+  measure();
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(measure);
+  addEventListener('load',measure);
+
+  /* slide do portfólio: avança sozinho só enquanto visível; para de vez quando a pessoa interage */
+  (function(){
+    var box=document.querySelector('.port'), tr=box.querySelector('.port__track'), sl=tr.children, n=sl.length,
+        bt=box.querySelectorAll('.port__nav button'), bar=box.querySelector('.port__bar i'), cur=0, seen=false, hold=false, off=still.matches, ad=false;
+    function preload(i){ var im=sl[(i+n)%n].querySelector('img'); if(im.loading==='lazy') im.loading='eager'; }
+    function sync(){
+      cur=Math.round(tr.scrollLeft/(tr.clientWidth||1));
+      bar.style.setProperty('--p',((cur+1)/n*100).toFixed(2)+'%');
+      preload(cur+1); preload(cur-1);
+    }
+    function go(i){
+      var wrap=i<0||i>=n; i=(i+n)%n; preload(i);
+      tr.scrollTo({left:i*tr.clientWidth,behavior:(still.matches||wrap)?'auto':'smooth'});
+    }
+    function stop(){ off=true; }
+    tr.addEventListener('scroll',function(){ if(!ad){ ad=true; requestAnimationFrame(function(){ ad=false; sync(); }); } },{passive:true});
+    bt[0].addEventListener('click',function(){ stop(); go(cur-1); });
+    bt[1].addEventListener('click',function(){ stop(); go(cur+1); });
+    tr.addEventListener('pointerdown',stop); tr.addEventListener('keydown',stop);
+    box.addEventListener('mouseenter',function(){ hold=true; }); box.addEventListener('mouseleave',function(){ hold=false; });
+    box.addEventListener('focusin',function(){ hold=true; }); box.addEventListener('focusout',function(){ hold=false; });
+    if('IntersectionObserver' in window){ new IntersectionObserver(function(e){ seen=e[0].isIntersecting; },{threshold:.5}).observe(box); }
+    setInterval(function(){ if(seen&&!hold&&!off&&!document.hidden) go(cur+1); },4500);
+    addEventListener('resize',function(){ tr.scrollLeft=cur*tr.clientWidth; });
+    sync();
+  })();
+
+  /* carrossel de locatários: um passo por segundo, em loop; pausa com mouse, foco ou toque */
+  (function(){
+    var tr=document.querySelector('.logos'), items=[].slice.call(tr.children), n=items.length, seen=false, hold=false, t=0;
+    if(still.matches) return;
+    items.forEach(function(li){ var c=li.cloneNode(true); c.setAttribute('aria-hidden','true'); tr.appendChild(c); });
+    function setW(){ return tr.children[n].offsetLeft-tr.children[0].offsetLeft; }
+    function wrap(){ var w=setW(); if(tr.scrollLeft>=w-1) tr.scrollLeft-=w; }
+    tr.addEventListener('mouseenter',function(){ hold=true; }); tr.addEventListener('mouseleave',function(){ hold=false; });
+    tr.addEventListener('focusin',function(){ hold=true; }); tr.addEventListener('focusout',function(){ hold=false; });
+    tr.addEventListener('pointerdown',function(){ hold=true; });
+    addEventListener('pointerup',function(){ if(hold&&!tr.matches(':hover')) setTimeout(function(){ hold=false; },2000); });
+    tr.addEventListener('scroll',function(){ clearTimeout(t); t=setTimeout(wrap,160); },{passive:true});
+    if('IntersectionObserver' in window){ new IntersectionObserver(function(e){ seen=e[0].isIntersecting; },{threshold:.3}).observe(tr); }
+    setInterval(function(){
+      if(!seen||hold||document.hidden) return;
+      wrap();
+      tr.scrollBy({left:tr.children[1].offsetLeft-tr.children[0].offsetLeft,behavior:'smooth'});
+    },1000);
+  })();
+
+  /* scroll suave */
+  addEventListener('load',function(){
+    if(!window.Lenis||still.matches) return;
+    var l=new Lenis({lerp:.1,smoothWheel:true,anchors:{offset:-92}});
+    (function raf(t){ l.raf(t); requestAnimationFrame(raf); })(0);
+  });
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js"></script>
+</body>
+</html>
